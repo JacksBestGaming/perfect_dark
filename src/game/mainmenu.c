@@ -1403,13 +1403,15 @@ MenuItemHandlerResult menuhandlerCoopBuddy(s32 operation, struct menuitem *item,
 
 			maxbuddies += extrabuddies;
 
-			if (maxbuddies > 4) {
-				maxbuddies = 4;
-			}
+			maxbuddies = 100;
 
-			if (maxbuddies < 1) {
-				maxbuddies = 1;
-			}
+//			if (maxbuddies > 4) {
+//				maxbuddies = 4;
+//			}
+
+//			if (maxbuddies < 1) {
+//				maxbuddies = 1;
+//			}
 
 #ifdef DEBUG
 			if (debugIsAllBuddiesEnabled()) {
