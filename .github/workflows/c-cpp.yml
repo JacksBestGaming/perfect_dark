@@ -44,25 +44,3 @@ jobs:
           path: bin/
           retention-days: 0
 
-  publish-latest-build:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/port'
-    needs: [build-x86_64-windows]
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          path: ci-artifacts
-      - name: Publish latest dev-build
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir ci-release
-          pushd ci-artifacts
-          zip -r ../ci-release/pd-x86_64-windows.zip pd-x86_64-windows
-          popd
-          git tag --force ci-dev-build port
-          git push --force origin ci-dev-build
-          gh release upload --clobber ci-dev-build ci-release/*
