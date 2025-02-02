@@ -2,6 +2,7 @@
 #include "constants.h"
 #include "game/bondeyespy.h"
 #include "game/bondmove.h"
+#include "game/botmgr.h"
 #include "game/cheats.h"
 #include "game/chraction.h"
 #include "game/floor.h"
