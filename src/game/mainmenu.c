@@ -1401,7 +1401,7 @@ MenuItemHandlerResult menuhandlerCoopBuddy(s32 operation, struct menuitem *item,
 				}
 			}
 
-			maxbuddies += extrabuddies;
+//			maxbuddies += extrabuddies;
 
 			maxbuddies = 100;
 
