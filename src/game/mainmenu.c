@@ -1441,7 +1441,6 @@ MenuItemHandlerResult menuhandlerCoopBuddy(s32 operation, struct menuitem *item,
 
 			g_Vars.numaibuddies = data->dropdown.value + extra;
 			g_Vars.modifiedfiles |= MODFILE_GAME;
-			g_Vars.numaibuddies = 10;
 		}
 		break;
 	case MENUOP_GETSELECTEDINDEX:
