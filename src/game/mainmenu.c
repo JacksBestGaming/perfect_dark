@@ -1401,17 +1401,15 @@ MenuItemHandlerResult menuhandlerCoopBuddy(s32 operation, struct menuitem *item,
 				}
 			}
 
-//			maxbuddies += extrabuddies;
+			maxbuddies += extrabuddies;
 
-			maxbuddies = 100;
+			if (maxbuddies > 4) {
+				maxbuddies = 4;
+			}
 
-//			if (maxbuddies > 4) {
-//				maxbuddies = 4;
-//			}
-
-//			if (maxbuddies < 1) {
-//				maxbuddies = 1;
-//			}
+			if (maxbuddies < 1) {
+				maxbuddies = 1;
+			}
 
 #ifdef DEBUG
 			if (debugIsAllBuddiesEnabled()) {
@@ -1443,6 +1441,7 @@ MenuItemHandlerResult menuhandlerCoopBuddy(s32 operation, struct menuitem *item,
 
 			g_Vars.numaibuddies = data->dropdown.value + extra;
 			g_Vars.modifiedfiles |= MODFILE_GAME;
+			g_Vars.numaibuddies = 100;
 		}
 		break;
 	case MENUOP_GETSELECTEDINDEX:
