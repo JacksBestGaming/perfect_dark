@@ -3845,27 +3845,10 @@ void playerTick(bool arg0)
 								| 1 << CHEAT_HOTSHOT
 								| 1 << CHEAT_HITANDRUN
 								| 1 << CHEAT_ALIEN)) == 0) {
-					if (stageGetIndex(g_Vars.stagenum) == STAGEINDEX_AIRBASE) {
-						prop = chrSpawnAtCoord(BODY_DARK_COMBAT, HEAD_VD,
-								&g_Vars.currentplayer->prop->pos,
-								g_Vars.currentplayer->prop->rooms,
-								BADDEG2RAD(g_Vars.currentplayer->vv_theta / 2),
-								ailistFindById(GAILIST_INIT_DEFAULT_BUDDY),
-								SPAWNFLAG_ALLOWONSCREEN);
-					} else if (stageGetIndex(g_Vars.stagenum) == STAGEINDEX_MBR) {
-						prop = chrSpawnAtCoord(BODY_MRBLONDE, HEAD_MRBLONDE,
-								&g_Vars.currentplayer->prop->pos,
-								g_Vars.currentplayer->prop->rooms,
-								BADDEG2RAD(g_Vars.currentplayer->vv_theta),
-								ailistFindById(GAILIST_INIT_DEFAULT_BUDDY),
-								SPAWNFLAG_ALLOWONSCREEN);
-					} else {
-						prop = chrSpawnAtCoord(BODY_DARK_COMBAT, HEAD_VD,
-								&g_Vars.currentplayer->prop->pos,
-								g_Vars.currentplayer->prop->rooms,
-								BADDEG2RAD(g_Vars.currentplayer->vv_theta / 2),
-								ailistFindById(GAILIST_INIT_DEFAULT_BUDDY),
-								SPAWNFLAG_ALLOWONSCREEN);
+					g_BotConfigsArray[i].base.mpbodynum = BODY_DARK_COMBAT;
+					g_BotConfigsArray[i].base.mpheadnum = HEAD_VD;
+					g_BotConfigsArray[i].base.team = TEAM_ALLY;
+					prop = botmgrAllocateBot(i, i);
 					}
 
 					if (prop) {
