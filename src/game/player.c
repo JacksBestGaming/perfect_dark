@@ -3854,8 +3854,8 @@ void playerTick(bool arg0)
 
 					if (g_MpBotChrPtrs[i]) {
 						chr = g_MpBotChrPtrs[i];
-						chr->prop->rooms[0] = g_Vars.currentplayer->prop->rooms[0];
 						chr->prop->pos = g_Vars.currentplayer->prop->pos;
+						roomsCopy(&g_Vars.currentplayer->prop->rooms, &chr->prop->rooms)
 						chr->flags |= CHRFLAG0_SKIPSAFETYCHECKS;
 						chr->flags2 |= CHRFLAG1_IGNORECOVER | CHRFLAG1_NOOP_00200000 | CHRFLAG1_AIVSAI_ADVANTAGED;
 						chr->team = TEAM_ALLY;
