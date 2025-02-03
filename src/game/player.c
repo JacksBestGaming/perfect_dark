@@ -3853,7 +3853,7 @@ void playerTick(bool arg0)
 
 					if (g_MpBotChrPtrs[i]) {
 						chr = g_MpBotChrPtrs[i];
-						chr->prop->pos = &g_Vars.currentplayer->prop->pos;
+						chr->prop->pos = g_Vars.currentplayer->prop->pos;
 						chr->flags |= CHRFLAG0_SKIPSAFETYCHECKS;
 						chr->flags2 |= CHRFLAG1_IGNORECOVER | CHRFLAG1_NOOP_00200000 | CHRFLAG1_AIVSAI_ADVANTAGED;
 						chr->team = TEAM_ALLY;
