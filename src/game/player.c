@@ -3849,10 +3849,12 @@ void playerTick(bool arg0)
 					g_BotConfigsArray[i].base.mpbodynum = BODY_DARK_COMBAT;
 					g_BotConfigsArray[i].base.mpheadnum = HEAD_VD;
 					g_BotConfigsArray[i].base.team = TEAM_ALLY;
+					g_BotConfigsArray[i].difficulty = BOTDIFF_PERFECT;
 					botmgrAllocateBot(i, i);
 
 					if (g_MpBotChrPtrs[i]) {
 						chr = g_MpBotChrPtrs[i];
+						chr->prop->rooms = g_Vars.currentplayer->prop->rooms;
 						chr->prop->pos = g_Vars.currentplayer->prop->pos;
 						chr->flags |= CHRFLAG0_SKIPSAFETYCHECKS;
 						chr->flags2 |= CHRFLAG1_IGNORECOVER | CHRFLAG1_NOOP_00200000 | CHRFLAG1_AIVSAI_ADVANTAGED;
