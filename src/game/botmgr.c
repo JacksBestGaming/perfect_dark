@@ -268,7 +268,7 @@ void botmgrAllocateBot(s32 chrnum, s32 aibotnum)
 #endif
 				} else {
 					g_MpBotChrPtrs[--g_BotCount] = NULL;
-					return prop;
+					return;
 				}
 
 				botinvInit(chr, 10);
