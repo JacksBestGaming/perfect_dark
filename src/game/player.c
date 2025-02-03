@@ -3850,7 +3850,6 @@ void playerTick(bool arg0)
 					g_BotConfigsArray[i].base.mpheadnum = HEAD_VD;
 					g_BotConfigsArray[i].base.team = TEAM_ALLY;
 					botmgrAllocateBot(i, i);
-					}
 
 					if (g_MpBotChrPtrs[i]) {
 						chr = g_MpBotChrPtrs[i];
