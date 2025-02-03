@@ -3849,11 +3849,11 @@ void playerTick(bool arg0)
 					g_BotConfigsArray[i].base.mpbodynum = BODY_DARK_COMBAT;
 					g_BotConfigsArray[i].base.mpheadnum = HEAD_VD;
 					g_BotConfigsArray[i].base.team = TEAM_ALLY;
-					prop = botmgrAllocateBot(i, i);
+					botmgrAllocateBot(i, i);
 					}
 
-					if (prop) {
-						chr = prop->chr;
+					if (g_MpBotChrPtrs[i]) {
+						chr = g_MpBotChrPtrs[i];
 						chr->flags |= CHRFLAG0_SKIPSAFETYCHECKS;
 						chr->flags2 |= CHRFLAG1_IGNORECOVER | CHRFLAG1_NOOP_00200000 | CHRFLAG1_AIVSAI_ADVANTAGED;
 						chr->team = TEAM_ALLY;

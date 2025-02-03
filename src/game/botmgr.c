@@ -26,7 +26,7 @@ void botmgrRemoveAll(void)
 	g_BotCount = 0;
 }
 
-struct prop *botmgrAllocateBot(s32 chrnum, s32 aibotnum)
+void botmgrAllocateBot(s32 chrnum, s32 aibotnum)
 {
 	RoomNum rooms[1];
 	struct prop *prop;
